@@ -1,30 +1,39 @@
 # Transformer Architecture (System Layer)
 
 ## 1. Story of Transformer Architecture
+
 Before Transformers, language models mostly used RNN-style architectures that processed text one token at a time and carried context through a rolling memory. This worked for short sequences, but it became slow, forgetful, and difficult to scale. Transformers changed the approach by introducing attention, which allows each token to directly look at other relevant tokens in the sequence. This made long-range context handling better and training much more scalable.
 
 ## 2. Why RNNs Failed at Scale
+
 RNNs struggled at scale because they processed tokens sequentially and stored prior context in a limited rolling hidden state. This made long-range dependencies hard to preserve, slowed training, and prevented efficient use of parallel hardware such as GPUs. As sequence length and dataset size grew, these limitations became a major bottleneck for large language modeling.
 
 ## 3. Attention Mechanism Intuition
+
 The attention mechanism allows a token to look at other relevant tokens in the same sequence and assign them importance. Instead of relying only on one compressed memory state, the model can directly access useful parts of the context. This helps it handle long-distance relationships and understand meaning more accurately.
 
 ## 4. Self-Attention Explained Visually
+
 Self-attention means each token can compare itself with every other token in the same input sequence and decide which ones matter most. For example, in a sentence with the word "it," the model can attend more strongly to the noun that "it" likely refers to. This lets the model build context-aware meaning across the whole sequence.
 
 ## 5. Multi-Head Attention Purpose
+
 Multi-head attention allows the model to look at the same sequence through multiple attention heads in parallel. Each head can learn a different type of relationship, such as grammar, references, local context, or long-range dependencies. This makes the model more expressive than using a single attention pattern.
 
 ## 6. Encoder-Only vs Decoder-Only vs Encoder-Decoder
+
 Encoder-only models are mainly used for understanding input, which makes them useful for embeddings, classification, and search. Decoder-only models generate text one token at a time and are commonly used for chat and code generation. Encoder-decoder models first process the input and then generate an output from it, which works well for tasks like translation and summarization.
 
 ## 7. Why Decoder-Only Models Dominate LLMs
+
 Decoder-only models dominate modern LLMs because they align naturally with next-token prediction, which is the main training objective of large language models. They are flexible enough to handle chat, rewriting, coding, summarization, and many other tasks through prompting. This makes them a strong general-purpose architecture for AI products.
 
 ## 8. Context Window and Positional Encoding
+
 The context window is the amount of text the model can consider in a single run. Positional encoding gives the model information about the order of tokens in that text, because Transformers process tokens in parallel and do not naturally understand sequence order. Together, they let the model see a bounded amount of text and understand how it is arranged.
 
 ## 9. KV Cache Intuition
+
 KV cache is an inference optimization used during generation. Instead of recomputing attention for all earlier tokens every time a new token is produced, the model stores previously computed key and value information and reuses it. This speeds up generation significantly, especially for long prompts and chat-style responses, but it also increases memory usage.
 
 ## Quiz — Transformer Architecture (System Layer)
@@ -32,6 +41,7 @@ KV cache is an inference optimization used during generation. Instead of recompu
 **10 Questions**
 
 **1. Why was sequential processing a major limitation of RNNs for large-scale language modeling?**
+
 - A) It required too much hard drive space to store the entire sequence at once.
 - B) It prevented efficient use of parallel hardware operations (like GPUs) and made preserving long-range dependencies difficult.
 - C) It could only process numbers, requiring complex tokenization for text.
@@ -43,6 +53,7 @@ KV cache is an inference optimization used during generation. Instead of recompu
 <br>
 
 **2. What core problem does attention solve better than a rolling hidden state?**
+
 - A) It eliminates the need for any training data by accessing external search engines.
 - B) It allows tokens to directly "look at" and weigh the relevance of other tokens in the sequence, instead of relying on a single lossy, compressed memory state.
 - C) It automatically translates input text into multiple languages simultaneously.
@@ -54,6 +65,7 @@ KV cache is an inference optimization used during generation. Instead of recompu
 <br>
 
 **3. In simple terms, what does self-attention allow a token to do?**
+
 - A) It allows a token to compare itself with every other token in the same input sequence to determine which ones matter most to its meaning.
 - B) It allows a token to delete itself if it is found to be irrelevant to the overall sentence.
 - C) It allows a token to execute Python code related to its context.
@@ -65,6 +77,7 @@ KV cache is an inference optimization used during generation. Instead of recompu
 <br>
 
 **4. Why is multi-head attention better than having only one attention head?**
+
 - A) It ensures the model never hallucinates by fact-checking across multiple databases.
 - B) It directly reduces the memory footprint of the model during training.
 - C) It allows the model to look at the same sequence through multiple perspectives in parallel, learning different types of relationships (e.g., grammar, coreference).
@@ -76,6 +89,7 @@ KV cache is an inference optimization used during generation. Instead of recompu
 <br>
 
 **5. What is the main difference between encoder-only and decoder-only models?**
+
 - A) Encoder-only models generate code, while decoder-only models generate natural language.
 - B) Encoder-only models only work on English text, while decoder-only models are multilingual.
 - C) Encoder-only models are mainly used for understanding input (embeddings, classification), while decoder-only models generate text one token at a time.
@@ -87,6 +101,7 @@ KV cache is an inference optimization used during generation. Instead of recompu
 <br>
 
 **6. Why are decoder-only models a better fit for modern chat-style LLMs?**
+
 - A) They are much smaller and can run on smartphones without requiring servers.
 - B) They align naturally with next-token prediction, making them highly flexible for generative tasks like chat, coding, and summarization via prompting.
 - C) They automatically fact-check their outputs before displaying them to users.
@@ -98,6 +113,7 @@ KV cache is an inference optimization used during generation. Instead of recompu
 <br>
 
 **7. What does the context window represent during inference?**
+
 - A) The maximum number of simultaneous users the model can support.
 - B) The specific graphical user interface the user interacts with.
 - C) The maximum amount of text (number of tokens) the model can consider in a single processing run.
@@ -109,6 +125,7 @@ KV cache is an inference optimization used during generation. Instead of recompu
 <br>
 
 **8. Why do Transformers need positional encoding?**
+
 - A) Because they process tokens in parallel and do not naturally understand the sequential order of tokens.
 - B) Because they need to know on which physical GPU each token is stored.
 - C) Because it allows them to compress the text into a smaller file format.
@@ -120,6 +137,7 @@ KV cache is an inference optimization used during generation. Instead of recompu
 <br>
 
 **9. What problem does KV cache solve during token generation?**
+
 - A) It fixes hallucination issues by caching known facts from the real world.
 - B) It speeds up generation by storing and reusing previously computed key/value information, instead of expensively recomputing attention for all earlier tokens at every step.
 - C) It translates tokens back into human-readable text faster.
@@ -131,6 +149,7 @@ KV cache is an inference optimization used during generation. Instead of recompu
 <br>
 
 **10. What is the main tradeoff introduced by using KV cache?**
+
 - A) It increases inference speed but significantly increases memory usage as the context grows.
 - B) It reduces memory usage but significantly slows down the generation of the first token.
 - C) It improves accuracy but severely limits the context window size to under 100 tokens.
@@ -140,3 +159,8 @@ KV cache is an inference optimization used during generation. Instead of recompu
 <b>A</b>. As sequences get very long, the memory footprint required to store all those preceding keys and values (the KV Cache) becomes massive, often bottlenecking generation.
 </details>
 <br>
+
+## Resources
+
+1. [YouTube: Transformer Architecture - Hindi](https://youtu.be/rj5V6q6-XUM?si=VGxT0AcDsocaXrW8)
+2. [YouTube: Transformer Architecture - English](https://youtu.be/RNF0FvRjGZk?si=_Dmp9cwjpMXwC77v)
