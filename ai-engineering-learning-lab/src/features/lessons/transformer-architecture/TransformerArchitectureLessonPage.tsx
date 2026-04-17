@@ -8,6 +8,7 @@ import {
   transformerQuizQuestions,
   transformerResources,
 } from "./transformerLessonData";
+import { RnnVsTransformerSimulation } from "./RnnVsTransformerSimulation";
 
 type TransformerArchitectureLessonPageProps = {
   onBack: () => void;
@@ -211,6 +212,14 @@ export function TransformerArchitectureLessonPage({
 
         <section className="reading-section" id="section-3">
           <div className="section-heading section-heading-constrained">
+            <p className="eyebrow">Guided Simulation</p>
+            <h2>Watch the architectural difference unfold step by step</h2>
+          </div>
+          <RnnVsTransformerSimulation />
+        </section>
+
+        <section className="reading-section" id="section-4">
+          <div className="section-heading section-heading-constrained">
             <p className="eyebrow">Attention Mechanism Intuition</p>
             <h2>Attention replaces one compressed memory with direct access</h2>
           </div>
@@ -239,7 +248,7 @@ export function TransformerArchitectureLessonPage({
           </article>
         </section>
 
-        <section className="reading-section" id="section-4">
+        <section className="reading-section" id="section-5">
           <div className="section-heading section-heading-constrained">
             <p className="eyebrow">Self-Attention Explained Visually</p>
             <h2>Each token compares itself with the whole input sequence</h2>
@@ -312,7 +321,7 @@ export function TransformerArchitectureLessonPage({
           </article>
         </section>
 
-        <section className="reading-section" id="section-5">
+        <section className="reading-section" id="section-6">
           <div className="section-heading section-heading-constrained">
             <p className="eyebrow">Multi-Head Attention Purpose</p>
             <h2>One sequence, multiple perspectives in parallel</h2>
@@ -349,7 +358,7 @@ export function TransformerArchitectureLessonPage({
           </div>
         </section>
 
-        <section className="reading-section" id="section-6">
+        <section className="reading-section" id="section-7">
           <div className="section-heading section-heading-constrained">
             <p className="eyebrow">Encoder-Only vs Decoder-Only vs Encoder-Decoder</p>
             <h2>Architecture choice depends on the job the model must do</h2>
@@ -391,7 +400,7 @@ export function TransformerArchitectureLessonPage({
           </article>
         </section>
 
-        <section className="reading-section" id="section-7">
+        <section className="reading-section" id="section-8">
           <div className="section-heading section-heading-constrained">
             <p className="eyebrow">Why Decoder-Only Models Dominate LLMs</p>
             <h2>Next-token prediction maps naturally onto open-ended generation</h2>
@@ -414,7 +423,7 @@ export function TransformerArchitectureLessonPage({
           </blockquote>
         </section>
 
-        <section className="reading-section" id="section-8">
+        <section className="reading-section" id="section-9">
           <div className="section-heading section-heading-constrained">
             <p className="eyebrow">Context Window, Positional Encoding, and KV Cache</p>
             <h2>Bounded context, ordered tokens, faster generation</h2>
@@ -479,7 +488,7 @@ export function TransformerArchitectureLessonPage({
           </article>
         </section>
 
-        <section className="reading-section" id="section-9">
+        <section className="reading-section" id="section-10">
           <article className="knowledge-card">
             <div className="section-heading section-heading-light">
               <p className="eyebrow">Quiz — Transformer Architecture</p>

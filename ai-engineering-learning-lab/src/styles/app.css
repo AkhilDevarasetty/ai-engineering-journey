@@ -1578,6 +1578,254 @@
     0 16px 34px rgba(39, 46, 66, 0.08);
 }
 
+.simulation-shell {
+  display: grid;
+  gap: 1.35rem;
+  padding: 1.75rem;
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at top right, rgba(151, 149, 255, 0.22), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(238, 240, 255, 0.96));
+  box-shadow: 0 20px 44px rgba(39, 46, 66, 0.08);
+}
+
+.simulation-header,
+.simulation-lane-header,
+.attention-weight-header,
+.simulation-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.simulation-step-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  color: #4a40e0;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 28px rgba(39, 46, 66, 0.06);
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.simulation-copy,
+.simulation-stage-label,
+.simulation-lane-copy,
+.simulation-insight-card p,
+.simulation-callout p,
+.rnn-memory-meter span {
+  color: #535b71;
+  line-height: 1.7;
+}
+
+.simulation-input-card,
+.simulation-insight-card,
+.simulation-summary-card,
+.simulation-lane,
+.rnn-memory-card {
+  padding: 1.25rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 14px 30px rgba(39, 46, 66, 0.06);
+}
+
+.simulation-progress {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.simulation-stage-label {
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.simulation-lanes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.simulation-lane {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: 1rem;
+}
+
+.simulation-lane-rnn {
+  background:
+    radial-gradient(circle at top right, rgba(247, 185, 200, 0.18), transparent 26%),
+    rgba(255, 255, 255, 0.86);
+}
+
+.simulation-lane-transformer {
+  background:
+    radial-gradient(circle at top right, rgba(83, 221, 252, 0.16), transparent 24%),
+    rgba(255, 255, 255, 0.86);
+}
+
+.simulation-lane h3,
+.simulation-summary-card h3 {
+  margin: 0;
+  color: #272e42;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+}
+
+.rnn-stream,
+.transformer-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.rnn-stream {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.rnn-token-node,
+.transformer-token-node {
+  display: grid;
+  place-items: center;
+  min-width: 3.4rem;
+  min-height: 3rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 1rem;
+  background: #eef0ff;
+  color: #8c93aa;
+  font-weight: 700;
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.rnn-token-node {
+  opacity: 0.45;
+}
+
+.rnn-token-node-active {
+  opacity: 1;
+  color: #272e42;
+  background: white;
+  box-shadow: 0 12px 28px rgba(39, 46, 66, 0.08);
+}
+
+.rnn-connector-svg,
+.attention-svg {
+  width: 100%;
+  height: 8.5rem;
+}
+
+.simulation-curve {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.simulation-curve-rnn {
+  stroke: rgba(180, 97, 129, 0.42);
+  stroke-dasharray: 8 14;
+  stroke-width: 8;
+}
+
+.rnn-memory-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.rnn-memory-copy strong {
+  display: block;
+  margin-top: 0.4rem;
+  color: #272e42;
+}
+
+.rnn-memory-meter {
+  min-width: 14rem;
+}
+
+.simulation-callout {
+  padding: 1rem 1.1rem;
+  border-radius: 1.2rem;
+}
+
+.simulation-callout-warning {
+  background: rgba(247, 185, 200, 0.18);
+}
+
+.simulation-callout-highlight {
+  background: rgba(220, 201, 255, 0.32);
+}
+
+.transformer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.transformer-token-node {
+  color: #272e42;
+  background: white;
+  box-shadow: 0 12px 28px rgba(39, 46, 66, 0.06);
+}
+
+.transformer-token-node-focus {
+  color: #4a40e0;
+  background: #ede9ff;
+  box-shadow:
+    0 14px 30px rgba(39, 46, 66, 0.08),
+    inset 0 0 0 1px rgba(74, 64, 224, 0.18);
+}
+
+.attention-svg {
+  opacity: 0.2;
+  transition: opacity 220ms ease;
+}
+
+.attention-svg-visible {
+  opacity: 1;
+}
+
+.simulation-curve-attention {
+  stroke: rgba(112, 42, 225, 0.84);
+  stroke-width: 8;
+  filter: drop-shadow(0 10px 22px rgba(112, 42, 225, 0.24));
+}
+
+.attention-node-dot {
+  fill: #702ae1;
+}
+
+.simulation-insight-card {
+  background:
+    linear-gradient(135deg, rgba(220, 201, 255, 0.32), rgba(83, 221, 252, 0.18)),
+    rgba(255, 255, 255, 0.78);
+}
+
+.simulation-comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.simulation-summary-card-accent {
+  background:
+    radial-gradient(circle at top right, rgba(83, 221, 252, 0.16), transparent 24%),
+    rgba(255, 255, 255, 0.86);
+}
+
 @media (max-width: 1120px) {
   .lesson-shell {
     grid-template-columns: 1fr;
@@ -1607,6 +1855,15 @@
     grid-template-columns: 1fr;
   }
 
+  .simulation-lanes,
+  .simulation-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transformer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .prediction-result {
     grid-template-columns: 1fr;
   }
@@ -1615,6 +1872,18 @@
 @media (max-width: 720px) {
   .lesson-main {
     padding: 2rem 1rem 3rem;
+  }
+
+  .simulation-header,
+  .simulation-lane-header,
+  .simulation-controls,
+  .rnn-memory-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .transformer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .next-lesson-card {

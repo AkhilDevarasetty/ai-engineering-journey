@@ -1,6 +1,7 @@
 export const transformerLessonSections = [
   "Story",
   "Why RNNs Failed",
+  "Guided Simulation",
   "Attention",
   "Self-Attention",
   "Multi-Head Attention",
